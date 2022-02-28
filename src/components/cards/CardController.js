@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Grid from '@mui/material/Grid'
 import CardType2 from './CardType2'
+import SkeletonCard from './SkeletonCard'
 import axios from 'axios'
 import { Typography, Button, Container } from '@mui/material'
 import { lightBlue } from '@mui/material/colors'
@@ -29,23 +30,37 @@ function CardController() {
         setTrending(result.data.results);
         setStatus('Trending Movies');
     })}
-
+    let card1, card2
+    if (nowPlaying.length === 0) {
+      card1 = <><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /></>
+    } else {
+      card1 = nowPlaying.map((now, index) => (
+        <div key={'20'+index}>
+          <CardType2 xs={10} md={4} lg={2} movie={now} index={index}/>
+        </div>
+      ))
+    }
+    if (trending.length === 0) {
+      card2 = <><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /></>
+    } else {
+      card2 = trending.map((now, index) => (
+        <div key={'20'+index}>
+          <CardType2 xs={10} md={4} lg={2} movie={now} index={index}/>
+        </div>
+      ))
+    }
     useEffect(() => {
-      axios.get('https://movie-hub1.herokuapp.com/home').then(result => { 
+      setTimeout(() => {axios.get('https://movie-hub1.herokuapp.com/home').then(result => { 
         setTrending(result.data.trending.results);
         setNowPlaying(result.data.nowPlaying.results);
-        return; })
+        return; })}, 1000)
     }, []);
 
   return (
     <>
       <Typography sx={{ml : 4, mt: 7}} variant='h3' color={lblue}> Now Playing movies</Typography>
       <Grid container sx={{justifyContent: 'center', mb:7, mt : 3}} >
-        {nowPlaying.map((now, index) => (
-          <div key={'20'+index}>
-            <CardType2 xs={10} md={4} lg={2} movie={now} index={index}/>
-          </div>
-        ))}
+        {card1}        
       </Grid>
 
     <Container sx={{display: 'flex', alignItems: 'center'}} spacing={2} direction="row">
@@ -57,11 +72,7 @@ function CardController() {
 
       <Typography sx={{ml : 4}} variant='h3' color={lblue}> {status}</Typography>
       <Grid container sx={{ justifyContent: 'center', mb:7, mt : 3}} >
-        {trending.map((trend, index) => (
-          <div key={'10'+index}>
-            <CardType2 sx={{ boxShadow: 5}} xs={10} md={4} lg={3} movie={trend} index={index}/>
-          </div>
-        ))}
+        {card2}
       </Grid>  
     </>
   )

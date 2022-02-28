@@ -23,7 +23,7 @@ function CardType2(props) {
 
   const navigate = useNavigate()
   const {favorites, setFavorites} = useContext(LoginContext)
-  const {username, setUsername} = useContext(LoginContext)
+  const {username} = useContext(LoginContext)
   const [fav, setFav] = useState(false)
   const [open, setOpen] = useState(false)
   const addFavorites = () => {
@@ -68,7 +68,7 @@ function CardType2(props) {
         autoHideDuration={5}
         message="Login to add favorites!"
     />
-      <Card sx={{ width: 340, m: 1, height: 305, boxShadow: 5 }}>
+      <Card sx={{ width: 340, m: 1, height: 325, boxShadow: 5 }}>
       <CardActionArea onClick={handleSearch}>
         <CardMedia
           component="img"
