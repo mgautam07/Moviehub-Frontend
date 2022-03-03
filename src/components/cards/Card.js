@@ -3,7 +3,7 @@ import dayjs from 'dayjs'
 import './card.css'
 
 function card(props) {
-  const linkk = "https://image.tmdb.org/t/p/w500/" + props.movie.backdrop_path;
+  const linkk = "https://image.tmdb.org/t/p/w1280/" + props.movie.backdrop_path;
   let date = dayjs(props.movie.release_date || props.movie.first_air_date).format('DD MMM YYYY')
 
   var classes = ['movie_card'];
