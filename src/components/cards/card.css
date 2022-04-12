@@ -14,7 +14,7 @@ body {
   display: block;
   width: 95%;
   height: 80%;
-  min-height: 500px;
+  min-height: 650px;
   margin: auto;
   margin-top: 10px;
   overflow: hidden;
@@ -33,7 +33,7 @@ body {
 }
 .movie_header {
   position: relative;
-  padding: 25px;
+  padding: 45px;
   height: 40%;
 }
 .movie_header h1 {
@@ -73,6 +73,7 @@ body {
   color: #cfd6e1;
   margin: 5px;
   font-size: 18px;
+  margin-top: 2rem;
 }
 .movie_social {
   height: 10%;
@@ -121,8 +122,8 @@ body {
   box-shadow: 0px 0px 120px -55px rgba(199, 147, 75, 0.8);
 }
 .skeleton-wrapper {
-  margin: 20px auto;
-  padding: 10px 15px;
+  margin: 8px;
+  padding: 10px 0;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
@@ -211,7 +212,6 @@ body {
     width: 100%;
     background-position: 50% 50% !important;
   }
-
   .movie_header {
     width: 100%;
     margin-top: 85px;

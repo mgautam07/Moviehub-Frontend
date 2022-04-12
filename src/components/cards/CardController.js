@@ -32,7 +32,7 @@ function CardController() {
     })}
     let card1, card2
     if (nowPlaying.length === 0) {
-      card1 = <><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /></>
+      card1 = <><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /></>
     } else {
       card1 = nowPlaying.map((now, index) => (
         <div key={'20'+index}>
@@ -41,7 +41,7 @@ function CardController() {
       ))
     }
     if (trending.length === 0) {
-      card2 = <><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /></>
+      card2 = <><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /><SkeletonCard /></>
     } else {
       card2 = trending.map((now, index) => (
         <div key={'20'+index}>
@@ -50,11 +50,12 @@ function CardController() {
       ))
     }
     useEffect(() => {
-      setTimeout(() => {axios.get('https://movie-hub1.herokuapp.com/home').then(result => { 
+      // setTimeout(() => {
+        axios.get('https://movie-hub1.herokuapp.com/home').then(result => { 
         setTrending(result.data.trending.results);
         setNowPlaying(result.data.nowPlaying.results);
-        return; })}, 1000)
-    }, []);
+        // return; })}, 1000)
+    })}, []);
 
   return (
     <>

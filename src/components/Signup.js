@@ -70,7 +70,7 @@ const Signup = () => {
                         <TextField sx={{mt : 1.7}} fullWidth label='Password' placeholder="Enter your password" onChange={(event) => {setPassword((event.target.value))}}/>
                         <TextField sx={{mt : 1.7}} fullWidth label='Confirm Password' placeholder="Confirm your password" onChange={(event) => {setPassword((event.target.value))}}/>
                         <Typography sx={{mt : 2}} color={lblue}> Already have an account ?
-                            <Link to="/signup"> Login</Link>
+                            <Link to="/login"> Login</Link>
                         </Typography>
                         <Button sx={{mt : 3}} type='submit' variant='contained' color='primary' onClick={handleSubmit}>Sign up</Button>
                     </form>

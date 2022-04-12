@@ -70,9 +70,9 @@ const Login=()=>{
                         <Avatar style={avatarStyle}><LockOutlinedIcon/></Avatar>
                         <h2>Log In</h2>
                     </Grid>
-                    <TextField label='Username' placeholder='Enter username' fullWidth onChange={(event) => {setUsernameLocal((event.target.value))}} required/>
-                    <TextField sx={{mt : 3}} label='Password' placeholder='Enter password' type='password' fullWidth onChange={(event) => {setPassword((event.target.value))}} required/>
-                    <FormControlLabel
+                    <TextField sx={{mt : 5}} label='Username' placeholder='Enter username' fullWidth onChange={(event) => {setUsernameLocal((event.target.value))}} required/>
+                    <TextField sx={{mt : 3, mb : 3}} label='Password' placeholder='Enter password' type='password' fullWidth onChange={(event) => {setPassword((event.target.value))}} required/>
+                    {/* <FormControlLabel
                         control={
                         <Checkbox
                             name="checkedB"
@@ -80,14 +80,14 @@ const Login=()=>{
                         />
                         }
                         label="Remember me"
-                    />
+                    /> */}
                     <Button type='submit' onClick={handleSubmit} color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
-                    <Typography sx={{mt : 2}} color={lblue}>
+                    {/* <Typography sx={{mt : 2}} color={lblue}>
                         <Link to="#" >
                             Forgot password ?
-                    </Link>
-                    </Typography>
-                    <Typography color={lblue}> Don't have an account ?
+                        </Link>
+                    </Typography> */}
+                    <Typography sx={{mt : 2}} color={lblue}> Don't have an account ?
                     <Link to="/signup"> Sign Up</Link>
                     </Typography>
                 </Paper>

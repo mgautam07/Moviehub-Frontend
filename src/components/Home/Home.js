@@ -1,8 +1,8 @@
 import {React} from 'react'
 import '../all.css'
 import './home.css'
-import nowshowing from'../../photos/nowshowing.jpg'
-import netflix from'../../photos/netflix.jpg'
+import nowshowing from'../../photos/now-showing.webp'
+import netflix from'../../photos/netflix.webp'
 import CardType2 from '../cards/CardController'
 
 
